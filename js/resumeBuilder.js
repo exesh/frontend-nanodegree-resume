@@ -67,7 +67,7 @@ var projects = {
         "images": ["http://img14.deviantart.net/cac3/i/2016/216/f/e/temp_website_progress__by_arlinnxaugust-dacly15.jpg"]
     }],
     "display": "function"
-}
+};
 
 $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
@@ -108,8 +108,8 @@ projects.display = function() {
             }
         }
     }
-}
-projects.display()
+};
+projects.display();
 
 education.display = function() {
     for (var ed = 0; ed < education.schools.length; ed++) {
@@ -134,6 +134,6 @@ education.display = function() {
         $(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[oc].dates));
         $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[oc].url));
     }
-}
+};
 education.display();
 $("#mapDiv").append(googleMap);
