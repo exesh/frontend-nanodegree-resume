@@ -219,3 +219,10 @@ span {
     display: block;
   }
 }
+
+#onlineClass {
+  padding: 20px 0px 0px;
+  color: #999;
+  font-weight: 400;
+  font-style: normal;
+}
