@@ -82,7 +82,7 @@ while (count < bio.skills.length) {
     $("#header").append(HTMLskills.replace("%data%", bio.skills[count]));
     count++;
 }
-}
+};
 
 work.display = function() {
 $("#workExperience").append(HTMLworkStart);
@@ -95,7 +95,7 @@ for (var job = 0; job < work.jobs.length; job++) {
     $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
     $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
 }
-}
+};
 
 projects.display = function() {
     for (var i = 0; i < projects.projects.length; i++) {
