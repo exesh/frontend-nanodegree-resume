@@ -67,34 +67,32 @@ var projects = {
 };
 
 bio.display = function() {
-$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-$("#topContacts, #footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
-$("#topContacts, #footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
-$("#topContacts, #footerContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
-$("#topContacts, #footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
-$("#topContacts, #footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
-$("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
-$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
-$("#header").append(HTMLskillsStart);
-var count = 0;
-while (count < bio.skills.length) {
-    $("#header").append(HTMLskills.replace("%data%", bio.skills[count]));
-    count++;
-}
+    $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+    $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+    $("#topContacts, #footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+    $("#topContacts, #footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+    $("#topContacts, #footerContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+    $("#topContacts, #footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+    $("#topContacts, #footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+    $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
+    $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+    $("#header").append(HTMLskillsStart);
+    for (var count = 0; count < bio.skills.length; count++) {
+        $("#header").append(HTMLskills.replace("%data%", bio.skills[count]));
+    }
 };
 
 work.display = function() {
-$("#workExperience").append(HTMLworkStart);
-for (var job = 0; job < work.jobs.length; job++) {
-    var workEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var workTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var workEmployerTtile = workEmployer + workTitle;
-    $(".work-entry:last").append(workEmployerTtile.replace("%data%", work.jobs[job].employer));
-    $(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
-    $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
-    $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
-}
+    $("#workExperience").append(HTMLworkStart);
+    for (var job = 0; job < work.jobs.length; job++) {
+        var workEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var workTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var workEmployerTtile = workEmployer + workTitle;
+        $(".work-entry:last").append(workEmployerTtile.replace("%data%", work.jobs[job].employer));
+        $(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
+        $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
+        $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
+    }
 };
 
 projects.display = function() {
@@ -103,10 +101,8 @@ projects.display = function() {
         $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[i].title));
         $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[i].dates));
         $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[i].description));
-        if (projects.projects[i].images.length > 0) {
-            for (var j = 0; j < projects.projects[i].images.length; j++) {
-                $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].images[j]));
-            }
+        for (var j = 0; j < projects.projects[i].images.length; j++) {
+            $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].images[j]));
         }
     }
 };
@@ -140,4 +136,3 @@ bio.display();
 work.display();
 projects.display();
 education.display();
-
